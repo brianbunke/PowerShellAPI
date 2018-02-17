@@ -1,11 +1,11 @@
-﻿# Supported query parameters:
+# Supported query parameters:
   # tag
 
 # Create an empty list to append results into
 $ResultList = New-Object System.Collections.Generic.List[object]
 
 # Set the URI, with or without a user-supplied tag
-$BaseURI = 'https://blogs.technet.microsoft.com/heyscriptingguy'
+$BaseURI = 'https://blogs.msdn.microsoft.com/powershell'
 If ($req_query_tag) {
     $BaseURI = "$BaseURI/tag/$req_query_tag"
 }
