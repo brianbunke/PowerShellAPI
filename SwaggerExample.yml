@@ -1,7 +1,12 @@
 swagger: '2.0'
 info:
-  title: bbpowershellapi.azurewebsites.net
+  title: Serverless PowerShell API
+  description: ...because it's awesome
   version: 1.0.0
+  contact:
+    name:  Brian Bunke
+    url:   http://www.brianbunke.com
+    email: me@brianbunke.com
 host: bbpowershellapi.azurewebsites.net
 basePath: /
 schemes:
@@ -10,30 +15,88 @@ schemes:
 paths:
   /api/PowerShellTeamGet:
     get:
-      operationId: /api/PowerShellTeamGet/get
-      produces: []
+      operationId:  PowerShellTeamGet
+      description:  Returns a listing of the most recent posts on the PowerShell Team's blog.
+      summary:      Gets PowerShell Team posts
+      x-ms-summary: Gets PowerShell Team posts
+      produces:
+        - application/json
       consumes: []
-      parameters: []
-      description: >-
-        Replace with Operation Object
-        #http://swagger.io/specification/#operationObject
+      parameters:
+        - name:     tag
+          in:       query
+          required: false
+          type:     string
+          description:     Filter results to only blog posts with the specified tag
+          x-ms-summary:    Blog post tag
+          x-ms-visibility: important
       responses:
         '200':
-          description: Success operation
+          description:  Details of up to 10 of the most recent blog posts
+          x-ms-summary: List of blog posts
+          schema:
+           type: object
+           properties:
+            date:
+              x-ms-summary: Date
+              description:  The date the blog was posted
+              type:   string
+              format: date-time
+            title:
+              x-ms-summary: Title
+              description:  The blog post's title
+              type: string
+            description:
+              x-ms-summary: Description
+              description:  A brief intro to the blog post
+              type: string
+            link:
+              x-ms-summary: Link
+              description:  The URI to the blog post
+              type: string
       security:
         - apikeyQuery: []
   /api/ScriptingGuysGet:
     get:
-      operationId: /api/ScriptingGuysGet/get
-      produces: []
+      operationId:  ScriptingGuysGet
+      description:  Returns a listing of the most recent posts on the Scripting Guys blog.
+      summary:      Gets Scripting Guys posts
+      x-ms-summary: Gets Scripting Guys posts
+      produces:
+        - application/json
       consumes: []
-      parameters: []
-      description: >-
-        Replace with Operation Object
-        #http://swagger.io/specification/#operationObject
+      parameters:
+        - name:     tag
+          in:       query
+          required: false
+          type:     string
+          description:     Filter results to only blog posts with the specified tag
+          x-ms-summary:    Blog post tag
+          x-ms-visibility: important
       responses:
         '200':
-          description: Success operation
+          description:  Details of up to 10 of the most recent blog posts
+          x-ms-summary: List of blog posts
+          schema:
+           type: object
+           properties:
+            date:
+              x-ms-summary: Date
+              description:  The date the blog was posted
+              type:   string
+              format: date-time
+            title:
+              x-ms-summary: Title
+              description:  The blog post's title
+              type: string
+            description:
+              x-ms-summary: Description
+              description:  A brief intro to the blog post
+              type: string
+            link:
+              x-ms-summary: Link
+              description:  The URI to the blog post
+              type: string
       security:
         - apikeyQuery: []
 definitions: {}
