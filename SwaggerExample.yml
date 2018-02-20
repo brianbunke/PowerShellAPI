@@ -1,0 +1,44 @@
+swagger: '2.0'
+info:
+  title: bbpowershellapi.azurewebsites.net
+  version: 1.0.0
+host: bbpowershellapi.azurewebsites.net
+basePath: /
+schemes:
+  - https
+  - http
+paths:
+  /api/PowerShellTeamGet:
+    get:
+      operationId: /api/PowerShellTeamGet/get
+      produces: []
+      consumes: []
+      parameters: []
+      description: >-
+        Replace with Operation Object
+        #http://swagger.io/specification/#operationObject
+      responses:
+        '200':
+          description: Success operation
+      security:
+        - apikeyQuery: []
+  /api/ScriptingGuysGet:
+    get:
+      operationId: /api/ScriptingGuysGet/get
+      produces: []
+      consumes: []
+      parameters: []
+      description: >-
+        Replace with Operation Object
+        #http://swagger.io/specification/#operationObject
+      responses:
+        '200':
+          description: Success operation
+      security:
+        - apikeyQuery: []
+definitions: {}
+securityDefinitions:
+  apikeyQuery:
+    type: apiKey
+    name: code
+    in: query
